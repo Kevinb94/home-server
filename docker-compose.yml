@@ -65,11 +65,39 @@ services:
     networks:
       - internal  # Use the same network
 
+
+  db_recipes:
+    restart: always
+    image: postgres:16-alpine
+    volumes:
+      - ./postgresql:/var/lib/postgresql/data
+    env_file:
+      - ./.env
+    networks:
+      - internal  # Use the same network
+
+  web_recipes:
+    restart: always
+    image: vabene1111/recipes
+    env_file:
+      - ./.env
+    volumes:
+      - recipes_staticfiles:/opt/recipes/staticfiles
+      # Do not make this a bind mount, see https://docs.tandoor.dev/install/docker/#volumes-vs-bind-mounts
+      - recipes_nginx_config:/opt/recipes/nginx/conf.d
+      - ./mediafiles:/opt/recipes/mediafiles
+    depends_on:
+      - db_recipes
+    networks:
+      - internal  # Use the same network
+
 volumes:
   trilium:
   portainer_data:
   certbot-etc:
   certbot-www:
+  recipes_nginx_config:
+  recipes_staticfiles:
 networks:
   internal:
     driver: bridge

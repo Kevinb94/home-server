@@ -1,0 +1,3 @@
+TANDOOR_VERSION = "1.5.19"
+TANDOOR_REF = "1bfe5bb6a031b7b2a03c0471adfa8245ce0476f1"
+VERSION_INFO = [{'name': 'Tandoor ', 'version': "commit 1bfe5bb6a031b7b2a03c0471adfa8245ce0476f1\nAuthor: vabene1111 \nDate:   Tue Aug 20 12:21:11 2024 +0200\n\n    Merge branch 'develop'\n", 'website': 'https://github.com/TandoorRecipes/recipes', 'commit_link': 'https://github.com/TandoorRecipes/recipes/commit/1bfe5bb6a031b7b2a03c0471adfa8245ce0476f1', 'ref': '1bfe5bb6a031b7b2a03c0471adfa8245ce0476f1', 'branch': 'HEAD', 'tag': '1.5.19'}]
